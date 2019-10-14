@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=\, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/dashboard.css" />
+    <link href="https://fonts.googleapis.com/css?family=Red+Hat+Display&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:700&display=swap" rel="stylesheet">
+    <title>Centralized Reporting Tool</title>
+</head>
+
+<body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        var checkBox = document.getElementById("myCheck");
+        var flagall = 1;
+        var flager = 1;
+        var flagre = 1;
+        var flagmfr = 1;
+
+        function sendMail() {
+            var email = "erik.floresdelfin@mx.yazaki.com;jesus.canaan@mx.yazaki.com;";
+            var subject = "Centralized Reporting Tool tasks";
+            var body_start = "Hello,%0D%0A%0D%0AI'm on BOM Compare Interface page (BOM Generator Interface Service),%0D%0A%0D%0AMy question or problem is listed here:%0D%0A%0D%0A%0D%0A%0D%0A%0D%0A%0D%0AKind Regards,";
+            var mailto_link = 'mailto:' + email + '?subject=' + subject + '&body=' + body_start;
+            window.location.href = mailto_link;
+        }
+
+        function active_MFR() {
+            if (flagmfr == 0) {
+                flagall = 1;
+                flager = 1;
+                flagre = 1;
+                flagmfr = 1;
+                document.getElementById("mfr").checked = false;
+                document.getElementById("TP").checked = false;
+                document.getElementById("FI").checked = false;
+                document.getElementById("CB").checked = false;
+                document.getElementById("MB").checked = false;
+                document.getElementById("FB").checked = false;
+                document.getElementById("VL").checked = false;
+                document.getElementById("CP").checked = false;
+                document.getElementById("UB").checked = false;
+                document.getElementById("PB").checked = false;
+                document.getElementById("CS").checked = false;
+                document.getElementById("PE").checked = false;
+                document.getElementById("YE").checked = false;
+                document.getElementById("AE").checked = false;
+                document.getElementById("MK").checked = false;
+            } else {
+                flagmfr = 0;
+                flagall = 1;
+                flager = 1;
+                flagre = 1;
+                document.getElementById("all").checked = false;
+                document.getElementById("er").checked = false;
+                document.getElementById("re").checked = false;
+                document.getElementById("TP").checked = false;
+                document.getElementById("FI").checked = false;
+                document.getElementById("CB").checked = false;
+                document.getElementById("MB").checked = true;
+                document.getElementById("FB").checked = false;
+                document.getElementById("VL").checked = true;
+                document.getElementById("CP").checked = true;
+                document.getElementById("UB").checked = true;
+                document.getElementById("PB").checked = false;
+                document.getElementById("CS").checked = false;
+                document.getElementById("PE").checked = false;
+                document.getElementById("YE").checked = false;
+                document.getElementById("AE").checked = false;
+                document.getElementById("MK").checked = false;
+            }
+        }
+
+        function active_RE() {
+            if (flagre == 0) {
+                flagall = 1;
+                flager = 1;
+                flagre = 1;
+                flagmfr = 1;
+                document.getElementById("re").checked = false;
+                document.getElementById("TP").checked = false;
+                document.getElementById("FI").checked = false;
+                document.getElementById("CB").checked = false;
+                document.getElementById("MB").checked = false;
+                document.getElementById("FB").checked = false;
+                document.getElementById("VL").checked = false;
+                document.getElementById("CP").checked = false;
+                document.getElementById("UB").checked = false;
+                document.getElementById("PB").checked = false;
+                document.getElementById("CS").checked = false;
+                document.getElementById("PE").checked = false;
+                document.getElementById("YE").checked = false;
+                document.getElementById("AE").checked = false;
+                document.getElementById("MK").checked = false;
+            } else {
+                flagall = 1;
+                flager = 1;
+                flagre = 0;
+                flagmfr = 1;
+                document.getElementById("all").checked = false;
+                document.getElementById("er").checked = false;
+                document.getElementById("mfr").checked = false;
+                document.getElementById("TP").checked = true;
+                document.getElementById("FI").checked = true;
+                document.getElementById("CB").checked = true;
+                document.getElementById("MB").checked = true;
+                document.getElementById("FB").checked = true;
+                document.getElementById("VL").checked = true;
+                document.getElementById("CP").checked = true;
+                document.getElementById("UB").checked = true;
+                document.getElementById("PB").checked = false;
+                document.getElementById("CS").checked = false;
+                document.getElementById("PE").checked = false;
+                document.getElementById("YE").checked = false;
+                document.getElementById("AE").checked = false;
+                document.getElementById("MK").checked = false;
+            }
+        }
+
+        function active_ER() {
+            if (flager == 0) {
+                flagall = 1;
+                flager = 1;
+                flagre = 1;
+                flagmfr = 1;
+                document.getElementById("er").checked = false;
+                document.getElementById("TP").checked = false;
+                document.getElementById("FI").checked = false;
+                document.getElementById("CB").checked = false;
+                document.getElementById("MB").checked = false;
+                document.getElementById("FB").checked = false;
+                document.getElementById("VL").checked = false;
+                document.getElementById("CP").checked = false;
+                document.getElementById("UB").checked = false;
+                document.getElementById("PB").checked = false;
+                document.getElementById("CS").checked = false;
+                document.getElementById("PE").checked = false;
+                document.getElementById("YE").checked = false;
+                document.getElementById("AE").checked = false;
+                document.getElementById("MK").checked = false;
+            } else {
+                flagall = 1;
+                flager = 0;
+                flagre = 1;
+                flagmfr = 1;
+                document.getElementById("all").checked = false;
+                document.getElementById("re").checked = false;
+                document.getElementById("mfr").checked = false;
+                document.getElementById("TP").checked = false;
+                document.getElementById("FI").checked = false;
+                document.getElementById("CB").checked = false;
+                document.getElementById("MB").checked = false;
+                document.getElementById("FB").checked = false;
+                document.getElementById("VL").checked = false;
+                document.getElementById("CP").checked = false;
+                document.getElementById("UB").checked = false;
+                document.getElementById("PB").checked = false;
+                document.getElementById("CS").checked = false;
+                document.getElementById("PE").checked = false;
+                document.getElementById("YE").checked = false;
+                document.getElementById("AE").checked = false;
+                document.getElementById("MK").checked = false;
+                document.getElementById("MB").checked = true;
+                document.getElementById("PB").checked = true;
+            }
+        }
+
+        function active_All() {
+            if (flagall == 0) {
+                flagall = 1;
+                flager = 1;
+                flagre = 1;
+                flagmfr = 1;
+                document.getElementById("all").checked = false;
+                document.getElementById("TP").checked = false;
+                document.getElementById("FI").checked = false;
+                document.getElementById("CB").checked = false;
+                document.getElementById("MB").checked = false;
+                document.getElementById("FB").checked = false;
+                document.getElementById("VL").checked = false;
+                document.getElementById("CP").checked = false;
+                document.getElementById("UB").checked = false;
+                document.getElementById("PB").checked = false;
+                document.getElementById("CS").checked = false;
+                document.getElementById("PE").checked = false;
+                document.getElementById("YE").checked = false;
+                document.getElementById("AE").checked = false;
+                document.getElementById("MK").checked = false;
+            } else {
+                flagall = 0;
+                flager = 1;
+                flagre = 1;
+                flagmfr = 1;
+                document.getElementById("er").checked = false;
+                document.getElementById("re").checked = false;
+                document.getElementById("mfr").checked = false;
+                document.getElementById("TP").checked = true;
+                document.getElementById("FI").checked = true;
+                document.getElementById("CB").checked = true;
+                document.getElementById("MB").checked = true;
+                document.getElementById("FB").checked = true;
+                document.getElementById("VL").checked = true;
+                document.getElementById("CP").checked = true;
+                document.getElementById("UB").checked = true;
+                document.getElementById("PB").checked = true;
+                document.getElementById("CS").checked = true;
+                document.getElementById("PE").checked = true;
+                document.getElementById("YE").checked = true;
+                document.getElementById("AE").checked = true;
+                document.getElementById("MK").checked = true;
+            }
+        }
+    </script>
+
+
+
+    <nav class="shadow">
+        <div></div>
+    </nav>
+    <div class="container">
+        <div class="card1 shadow">
+            <div class="title">
+                <span>
+                    <i class="material-icons icon-span">assistant</i>
+                </span>
+                <div>
+                    Quality Scorecard <br /> Generator
+                </div>
+            </div>
+            <div class="action ">
+                Enter EDM's MasterBOM ID:
+            </div>
+            <div class="form-container">
+                <form action="Yazaki_servlet" method="GET">
+                    <input type="text" name="masterbom" value="A23456789012345" class="input-label" required />
+                    <input type="submit" value="Create Report" class="input-btn" required />
+                </form>
+            </div>
+
+            <div class="description">
+                This application allows running a report that provides the user Supply Chain, Life-cycle and Environmental Risk data from IHS Markit/Component Engineering pre-approved information. This Centralized Reporting Tool System is oriented only to EBOM pre-release.
+                Engineering technical check-only, it does not have intent to replace other platforms/systems inside Yazaki Company.
+            </div>
+        </div>
+        <div class="card2 shadow">
+            <div class="title">
+                <span>
+                    <i class="material-icons icon-span">assistant</i>
+                </span>
+                <div>
+                    Design Derating <br /> Template
+                </div>
+            </div>
+            <div class="action ">
+                Enter EDM's MasterBOM ID:
+            </div>
+            <div class="form-container">
+                <form action="Yazaki_servlet" method="GET" class="form-center">
+                    <input type="text" name="masterbom" value="A23456789012345" class="input-label" required />
+                    <div class="input-inputs">
+                        <div class="checkboxes">
+                            <div>
+                                <label class="switch">
+                                    <input type="checkbox" name="DDC" value="true" />
+                                    <span class="slider round"></span>
+                                </label>
+                                <span class="btn-label">
+                                    CAPACITOR
+                                </span>
+                            </div>
+                            <div>
+                                <label class="switch">
+                                    <input type="checkbox" name="DDR" value="true" />
+                                    <span class="slider round"></span>
+                                </label>
+                                <span class="btn-label">
+                                    RESISTOR
+                                </span>
+                            </div>
+                            <div>
+                                <label class="switch">
+                                    <input type="checkbox" name="DDL" value="true" />
+                                    <span class="slider round"></span>
+                                </label>
+                                <span class="btn-label">
+                                    LED
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <input type="submit" value="Create Report" class="input-btn flexbtn" required />
+                </form>
+            </div>
+            <div class="description">
+                This application allows running a report that provides the user Component Derating (PD) information related to the project. This Centralized Reporting Tool System is oriented only to EBOM pre-release. Engineering technical Check only, it does not have
+                intent to replace other systems inside Yazaki Company.
+            </div>
+        </div>
+        <div class="card3 shadow">
+            <div class="title">
+                <span>
+                    <i class="material-icons icon-span">assistant</i>
+                </span>
+                <div>
+                    Budgetary Costing <br /> Interface
+                </div>
+            </div>
+            <div class="action ">
+                Enter EDM's MasterBOM ID:
+            </div>
+            <div class="form-container">
+                <form action="Yazaki_servlet" method="GET" class="form-center-secondary">
+                    <input type="text" name="masterbom" value="A23456789012345" class="input-label-secondary" required />
+                    <div class="instructions">
+                        In order to generate reports with multiple projects included, please use the pype symbol "|" to separate each project ID<br><strong>i.e A00000000000110|A00000000001500</strong>
+                    </div>
+                    <div class="input-inputs-secondary">
+                        <div class="checkboxes-secondary">
+                            <div>
+                                <label class="switch-secondary">
+                                    <input type="checkbox" name="DDC" value="true" />
+                                    <span class="slider-secondary round-secondary"></span>
+                                </label>
+                                <span class="btn-label-secondary">
+                                BUDGETARY<br>COSTING BOM
+                                </span>
+                            </div>
+                            <div>
+                                <label class="switch-secondary">
+                                    <input type="checkbox" name="DDR" value="true" />
+                                    <span class="slider-secondary round-secondary"></span>
+                                </label>
+                                <span class="btn-label-secondary">
+                                FUNCTION<br>COSTING BOM
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <input type="submit" value="Create Report" class="input-btn flexbtn-secondary" required />
+                </form>
+            </div>
+            <div class="description">
+                This application allows running reports that provides the user project cost estimation data, or costing concentrated data from different sources, these are non-official release reports (Just as reference). This Centralized Reporting Tool System is oriented
+                only to EBOM pre-release. Engineering technical Check only, it does not have intent to replace other systems inside Yazaki Company.
+            </div>
+        </div>
+        <div class="card4 shadow">
+            <div class="title">
+                <span>
+                                    <i class="material-icons icon-span">assistant</i>
+                                </span>
+                <div>
+                    BOM Generator
+                </div>
+            </div>
+            <div class="content">
+                <div class="divisor">
+
+                    <div class="action ">
+                        Enter EDM's MasterBOM ID:
+                    </div>
+                    <div class="form-container">
+                        <form action="Yazaki_servlet" method="GET">
+                            <input type="text" name="masterbom" value="A23456789012345" class="input-label" required />
+                            <input type="submit" value="Create Report" class="input-btn" required />
+                        </form>
+                    </div>
+
+                    <div class="description">
+                        This application allows running a RPTDESIGN report with VX.2.3 libraries connection that provides information for deliverables used on Manufacturing and EI Group V&V. This Centralized Reporting Tool System is oriented only to EBOM pre-release. Engineering
+                        technical Check only, it does not have intent to replace other systems inside Yazaki Company.
+                    </div>
+                </div>
+                <div class="divisor-options">
+                    <div class="options-row">
+                        <div>
+                            <label class="switch-group">
+                                        <input type="checkbox" name="TP" id="TP" value="true" />
+                                        <span class="slider-group"></span>
+                                    </label>
+                            <span class="btn-label-group">
+                                        TITLE PAGE
+                                    </span>
+                        </div>
+                        <div>
+                            <label class="switch-group">
+                                        <input type="checkbox" name="FI" id="FI" value="true" />
+                                        <span class="slider-group"></span>
+                                    </label>
+                            <span class="btn-label-group">
+                                        FILE ID
+                                    </span>
+                        </div>
+                        <div>
+                            <label class="switch-group">
+                                        <input type="checkbox" name="MAB" id="MAB" value="true" />
+                                        <span class="slider-group"></span>
+                                    </label>
+                            <span class="btn-label-group">
+                                        MULTIPLE ASSY BOM
+                                    </span>
+                        </div>
+                    </div>
+                    <div class="options-row">
+                        <div>
+                            <label class="switch-group">
+                                        <input type="checkbox" name="MB" id="MB" value="true" />
+                                        <span class="slider-group"></span>
+                                    </label>
+                            <span class="btn-label-group">
+                                        MANUFACTURING BOM
+                                    </span>
+                        </div>
+                        <div>
+                            <label class="switch-group">
+                                        <input type="checkbox" name="FB" id="FB" value="true" />
+                                        <span class="slider-group"></span>
+                                    </label>
+                            <span class="btn-label-group">
+                                        FUNCTION BOM
+                                    </span>
+                        </div>
+                        <div>
+                            <label class="switch-group">
+                                        <input type="checkbox" name="VL" id="VL" value="true" />
+                                        <span class="slider-group"></span>
+                                    </label>
+                            <span class="btn-label-group">
+                                        VARIATION LIST
+                                    </span>
+                        </div>
+                    </div>
+                    <div class="options-row">
+                        <div>
+                            <label class="switch-group">
+                                        <input type="checkbox" name="CP" id="CP" value="true" />
+                                        <span class="slider-group"></span>
+                                    </label>
+                            <span class="btn-label-group">
+                                        COMMON PARTS
+                                    </span>
+                        </div>
+                        <div>
+                            <label class="switch-group">
+                                        <input type="checkbox" name="UB" id="UB" value="true" />
+                                        <span class="slider-group"></span>
+                                    </label>
+                            <span class="btn-label-group">
+                                        UNASSEMBLED BOM
+                                    </span>
+                        </div>
+                        <div>
+                            <label class="switch-group">
+                                        <input type="checkbox" name="PB" id="PB" value="true" />
+                                        <span class="slider-group"></span>
+                                    </label>
+                            <span class="btn-label-group">
+                                        PROCUREMENT BOM
+                                    </span>
+                        </div>
+                    </div>
+                    <div class="options-row">
+                        <div>
+                            <label class="switch-group">
+                                        <input type="checkbox" name="CS" id="CS" value="true" />
+                                        <span class="slider-group"></span>
+                                    </label>
+                            <span class="btn-label-group">
+                                        CONTENT SHEET
+                                    </span>
+                        </div>
+                        <div>
+                            <label class="switch-group">
+                                        <input type="checkbox" name="PE" id="PE" value="true" />
+                                        <span class="slider-group"></span>
+                                    </label>
+                            <span class="btn-label-group">
+                                        PARTS EXAMINATION
+                                    </span>
+                        </div>
+                        <div>
+                            <label class="switch-group">
+                                        <input type="checkbox" name="YE" id="YE" value="true" />
+                                        <span class="slider-group"></span>
+                                    </label>
+                            <span class="btn-label-group">
+                                        YEMR
+                                    </span>
+                        </div>
+                    </div>
+                    <div class="options-row">
+                        <div>
+                            <label class="switch-group">
+                                        <input type="checkbox" name="AE" id="AE" value="true" />
+                                        <span class="slider-group"></span>
+                                    </label>
+                            <span class="btn-label-group">
+                                        AEC-Q
+                                    </span>
+                        </div>
+                        <div>
+                            <label class="switch-group">
+                                        <input type="checkbox" name="MK" id="MK" value="true" />
+                                        <span class="slider-group"></span>
+                                    </label>
+                            <span class="btn-label-group">
+                                        MARK-UP BOM
+                                    </span>
+                        </div>
+                        <div>
+                            <label class="switch-group">
+                                        <input type="checkbox" name="CB" id="CB" value="true" />
+                                        <span class="slider-group"></span>
+                                    </label>
+                            <span class="btn-label-group">
+                                        COST-BOM
+                                    </span>
+                        </div>
+                    </div>
+                    <div class="options-row-ext">
+                        <div>
+                            <label class="switch-group-ext">
+                                        <input type="radio" name="selection" value="all" id="all" onclick="active_All()" />
+                                        <span class="slider-group-ext"></span>
+                                    </label>
+                            <span class="btn-label-group-ext">
+                                        ALL
+                                    </span>
+                        </div>
+                        <div>
+                            <label class="switch-group-ext">
+                                        <input type="radio" name="selection" value="re" id="re" onclick="active_RE()" />
+                                        <span class="slider-group-ext"></span>
+                                    </label>
+                            <span class="btn-label-group-ext">
+                                        RE PKG
+                                    </span>
+                        </div>
+                        <div>
+                            <label class="switch-group-ext">
+                                        <input type="radio" name="selection" value="er" id="er" onclick="active_ER()" />
+                                        <span class="slider-group-ext"></span>
+                                    </label>
+                            <span class="btn-label-group-ext">
+                                        ER PKG
+                                    </span>
+                        </div>
+                        <div>
+                            <label class="switch-group-ext">
+                                        <input type="radio" name="selection" value="mfr" id="mfr" onclick="active_MFR()" />
+                                        <span class="slider-group-ext"></span>
+                                    </label>
+                            <span class="btn-label-group-ext">
+                                        MFR
+                                    </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="card5 shadow">
+
+        </div>
+        <div class="card6 shadow">
+            <div class="title">
+                <span>
+                                    <i class="material-icons icon-span">assistant</i>
+                                </span>
+                <div>
+                    BOM Generator
+                </div>
+            </div>
+            <div class="cardcontent">
+                <div class="divisor">
+
+                    <div class="action ">
+                        Enter EDM's MasterBOM ID:
+                    </div>
+                    <div class="form-container">
+                        <form action="Yazaki_servlet" method="GET">
+                            <input type="text" name="masterbom" value="A23456789012345" class="input-label" required />
+                            <input type="submit" value="Create Report" class="input-btn" required />
+                        </form>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="description">
+                This application allows running a RPTDESIGN report with VX.2.3 libraries connection that provides information for deliverables used on Manufacturing and EI Group V&V. This Centralized Reporting Tool System is oriented only to EBOM pre-release. Engineering
+                technical Check only, it does not have intent to replace other systems inside Yazaki Company.
+            </div>
+
+        </div>
+        <div class="card7 shadow">
+            <div class="title">
+                <span>
+                                    <i class="material-icons icon-span">assistant</i>
+                                </span>
+                <div>
+                    FileViewer Search
+                </div>
+            </div>
+            <div class="cardcontent">
+                <div class="divisor">
+
+                    <div class="action ">
+                        Enter EDM's MasterBOM ID:
+                    </div>
+                    <div class="form-container">
+                        <form action="Yazaki_servlet" method="GET">
+                            <input type="text" name="masterbom" value="A23456789012345" class="input-label" required />
+                            <input type="submit" value="Create Report" class="input-btn" required />
+                        </form>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="description">
+                This application allows searching generated reports based on the MBOM ID as a filter parameter, results are download resources. The search requires an MBOM ID and a catalog type defined, in order to reduce the amount of matched files. This Centralized
+                Reporting Tool System is oriented only to EBOM pre-release. Engineering technical Check only, it does not have intent to replace other systems inside Yazaki Company.
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<title>Main_Menu</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/w3.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+	integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+	crossorigin="anonymous">
+<style>
+body, h1, h2, h3, h4, h5, h6 {
+	font-family: "Montserrat", sans-serif
+}
+
+.w3-row-padding img {
+	margin-bottom: 12px
+}
+/* Set the width of the sidebar to 120px */
+.w3-sidebar {
+	width: 120px;
+	background: #222;
+}
+/* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
+#main {
+	margin-left: 120px
+}
+/* Remove margins from "page content" on small screens */
+@media only screen and (max-width: 600px) {
+	#main {
+		margin-left: 0
+	}
+}
+</style>
+<body class="w3-black">
+	<script>
+		function sendMail() {
+			var email="erik.floresdelfin@mx.yazaki.com;jesus.canaan@mx.yazaki.com;";
+			var subject="Centralized Reporting Tool tasks";
+			var body_start="Hello,%0D%0A%0D%0AI'm on HOME page (Parts Obsolescense Management Service),%0D%0A%0D%0AMy question or problem is listed here:%0D%0A%0D%0A%0D%0A%0D%0A%0D%0A%0D%0AKind Regards,";
+			var mailto_link='mailto:'+email+'?subject='+subject+'&body='+body_start;
+			window.location.href = mailto_link;
+		}
+	</script>
+	<!-- Icon Bar (Sidebar - hidden on small screens) -->
+	<nav
+		class="w3-sidebar w3-fode w3-bar-block w3-small w3-hide-small w3-center">
+		<ul class="nav navbar-nav navbar-right">
+			<li><a href="logout.do">Logout</a></li>
+		</ul>
+		<a href="#" class="w3-bar-item w3-button w3-padding-large w3-black">
+			<i class="fa fa-home w3-xxlarge"></i>
+			<p>
+			<center>Home</center>
+			</p>
+		</a> <a href="todo.do?url=QSCI"
+			class="w3-bar-item w3-button w3-padding-large w3-hover-black"> <i
+			class="fa fa-microchip w3-xxlarge"></i>
+			<p>
+			<center>Quality Scorecard</center>
+			</p>
+		</a> <a href="todo.do?url=BGS"
+			class="w3-bar-item w3-button w3-padding-large w3-hover-black"> <i
+			class="fa fa-cubes w3-xxlarge"></i>
+			<p>
+			<center>BOM Generator</center>
+			</p>
+		</a> <a href="todo.do?url=BCIS"
+			class="w3-bar-item w3-button w3-padding-large w3-hover-black"> <i
+			class="fa fa-clone w3-xxlarge"></i>
+			<p>
+			<center>BOM Compare</center>
+			</p>
+		</a> <a href="todo.do?url=DDTS"
+			class="w3-bar-item w3-button w3-padding-large w3-hover-black"> <i
+			class="fa fa-braille w3-xxlarge"></i>
+			<p>
+			<center>Design Derating</center>
+			</p>
+		</a> </a> <a href="todo.do?url=BCOSTI"
+			class="w3-bar-item w3-button w3-padding-large w3-hover-black"> <i
+			class="fa fa-university w3-xxlarge"></i>
+			<p>
+			<center>Budgetary Costing</center>
+			</p>
+		</a> <a href="todo.do?url=FilesReader"
+			class="w3-bar-item w3-button w3-padding-large w3-hover-black"> <i
+			class="fa fa-window-maximize w3-xxlarge"></i>
+			<p>
+			<center>FileViewer</center>
+			</p>
+		</a>
+	</nav>
+
+	<!-- Navbar on small screens (Hidden on medium and large screens) -->
+	<div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
+		<div
+			class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
+			<a href="index.html" class="w3-bar-item w3-button"
+				style="width: 25% !important">HOME</a> <a href="BGS.html"
+				class="w3-bar-item w3-button" style="width: 25% !important">BGIS</a>
+			<a href="#" class="w3-bar-item w3-button"
+				style="width: 25% !important">PHOTOS</a> <a href="#"
+				class="w3-bar-item w3-button" style="width: 25% !important">CONTACT</a>
+		</div>
+	</div>
+
+	<!-- Page Content -->
+	<div class="w3-padding-large" id="main">
+		<form action="Yazaki_servlet" method="GET">
+			<header>
+				<a href="#"><img src="imgs/yaz-logo-full-color.gif" height="100"></a>
+			</header>
+			<nav>
+				<ul>
+					<li><a href="https://yazaki.sharepoint.com/sites/yncaconnection" target="_blank">YNA Engineering Site</a></li>
+					<li><a href="https://www.yazaki-europe.com/index.html " target="_blank">YEL Engineering Site</a></li>
+					<li><a href="https://www.yazaki-group.com/global/ " target="_blank">ECI Engineering Site</a></li>
+										<li><a href="/nprRequestClient">NPR</a></li>
+					<li><a href="/logout.do" target="">-- (X) LOGOUT --</a></li>
+				</ul>
+			</nav>
+			<main>
+			<section>
+				<article>
+					<h3>
+						<strong>Welcome To Centralized Reporting Tool System</strong>
+					</h3>
+					<figure>
+						<i class="fa fa-home w3-xxlarge"></i>
+					</figure>
+
+					<p>This reporting service is created with the intention of 
+					centralizing the engineering pre-released reports, 
+					which includes all the solutions for manufacturing purposes, 
+					comparison for projects, and costing estimation.</p>
+					
+					<p>The reports generated through this service are engineering technical check only, 
+					this Centralized Reporting Tool System does not have intent to replace other systems inside Yazaki Company.</p>
+
+				</article>
+			</section>
+
+
+			<aside>
+				<h3>
+					<strong>Quick Links</strong>
+				</h3>
+				<ul>
+					<li><a href="todo.do?url=index"><strong>Home</strong></a></li>
+					<li><a href="todo.do?url=about"><strong>About Us</strong></a></li>
+					<li><a href="todo.do?url=guidelines"><strong>Guidelines</strong></a></li>
+					<li><a href="#" onclick="sendMail();"><strong>Contact
+								Us</strong></a></li>
+				</ul>
+			</aside>
+			</main>
+
+			<footer>
+				<strong> &copy; Copyright 2018 | All Rights Reserved <a
+					href="https://yazaki.sharepoint.com/sites/yncaconnection">Yazaki
+						North America</a> | Erik Emilio Flores Delfin
+					(erik.floresdelfin@mx.yazaki.com) <a href="">Terms and
+						conditions</a>
+				</strong>
+			</footer>
+		</form>
+
+		<!-- About Section -->
+
+
+		<!-- END PAGE CONTENT -->
+	</div>
+
+</body>
+</html>

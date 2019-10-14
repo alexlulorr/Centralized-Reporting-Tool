@@ -1,0 +1,89 @@
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <title>Centralized Reporting Tool</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <form action="/login.do" method="POST">
+
+            <img src="/imgs/photo-1551609189-eba71b3a8566.jfif" alt="" class="login-background">
+
+            <div class="login-container">
+                <div class="login-flex">
+
+                    <div class="login-image-container">
+                        <img src="/imgs/68bce441989987.57bc70bebfdec.jpg" alt="YAZAKI LOGO" class=login-image>
+                    </div>
+
+                    <div class="login-form-container">
+                        <div class="login-form-logo">
+                            <img src="/imgs/yazaki-vector-logo.png" alt="YAZAKI LOGO" class=login-logo>
+                        </div>
+
+
+
+                        <div class="login-form">
+
+
+                            <div class="login-input-container">
+                                <input type="text" name="name" id="name" autocomplete="off" class="login-form-input " required/>
+                                <label for="name " class="login-label ">
+                                    <span class="login-label-span ">Username</span>
+                                </label>
+                            </div>
+                            <div class="login-input-container ">
+                                <input type="password" name="password " autocomplete="off" class="login-form-input " required/>
+                                <label for="password " class="login-label ">
+                                    <span class="login-label-span ">Password</span>
+                                </label>
+                            </div>
+                            <div class="login-input-container ">
+
+                                <select name="region " autocomplete="off" class="login-form-input " required>
+                                    <option ></option>
+                                    <option value="YNA ">YNA</option>
+                                    <option value="YEL ">YEL</option>
+                                </select>
+                                <label for="region " class="login-label ">
+                                    <span class="login-label-span ">Region</span>
+                                </label>
+                            </div>
+
+
+
+
+                        </div>
+                        <div class="login-buttons ">
+
+                            <input type="button" value="Request Access" onclick="sendMail();" class="btn btnsecondary" />
+                            <input type="submit" value="Log-In" class="btn btnprimary" />
+
+                        </div>
+
+                        <div class="login-form-footer ">
+                            <!-- <h4>Terms and Conditions:</h4> -->
+                            <p>
+                                This centralized EBOM Analysis & Reporting System is intented for Engineering Pre-Release checks & documentation purposes. This system does not replace any other production related systems. For this system to work the Bill of Materials must be preloaded
+                                in the EDM BOM Warehouse. The quality of the EBOM checks is limited to the information that Yazaki has on the components found on the EBOM. The time for the analysis & reports execution may vary depending on how many users
+                                are accessing the system at the same time.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </form>
+
+    </div>
+
+
+
+</body>
+
+</html>

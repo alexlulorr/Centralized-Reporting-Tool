@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=\, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/download.css" />
+    <link rel="stylesheet" href="/css/loadingdownload.css" />
+    <link href="https://fonts.googleapis.com/css?family=Red+Hat+Display&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:700&display=swap" rel="stylesheet">
+    <title>Centralized Reporting Tool</title>
+</head>
+
+<body id="mainBody" class="">
+
+    <div id="background" class="screen-bkg opacity transitions"></div>
+    <div class="loading transitions">
+        <div id="loadingContainer" class="loading-container transitions hide-loading">
+            <div class="loading-object transitions"></div>
+            <img src="/imgs/loading-no-background.png" alt="Yazaki Logo">
+        </div>
+    </div>
+    <div id="mainContainer" class="transitions">
+        <nav class="nav-footer-columns">
+            <div class="shadow transition logo">
+                <div class="imagen">
+                    <img src="/imgs/yaz-logo-full-WhiteAndRed_Tagline.png" alt="logo">
+                </div>
+                <div class="title-nav">
+                    Centralized Reporting Tool System
+                </div>
+
+                <div class="new-request" onclick="window.location.replace('/todo.do?url=index');">
+                    <div>
+                        <div class="home">
+
+                            <div><i class="material-icons icon-span">home</i></div>
+                        </div>
+
+                        <div class="main-page">
+                            <div class="font-styling">
+                                Main Page
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </nav>
+
+
+        <div class="container grid-columns">
+            <div class="card1 transition roundbottom shadow">
+                <div class="text-format roundtop">
+
+                    <div class="download-title">
+                        Your Download <br /> is Ready
+                    </div>
+                </div>
+                <div class="zip-logo">
+                    <img class="zip-image" src="/imgs/zip.png" alt="ZIP LOGO">
+                </div>
+                <div class="action-container">
+                    <div class="action ">
+                        Click Here to Start
+                    </div>
+                    <div class="form-container">
+                        <form id="card1Input" action="Yazaki_servlet" method="GET" onsubmit="startAnimation();">
+
+                            <input type="submit" value="Download ZIP File" class="input-btn  transition color"
+                                required />
+                        </form>
+                    </div>
+                </div>
+
+
+
+                <div class="description">
+                    The generated reports on this application are not official released BOMs, it does not have intent to
+                    replace other platforms/systems inside Yazaki Company.
+
+                </div>
+            </div>
+
+
+        </div>
+
+        <footer class="nav-footer-columns">
+            <div class="transition background-image foot">
+                <div class="logout" onclick="window.location.replace('/logout.do');">
+                    <div>
+                        <div>
+                            <i class="material-icons icon-span">exit_to_app</i>
+                        </div>
+
+                        <div class="logout-text">Log Out</div>
+
+                    </div>
+
+                </div>
+            </div>
+        </footer>
+
+
+
+    </div>
+
+</body>
+
+</html>
